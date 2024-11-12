@@ -7,7 +7,7 @@ export default function Index() {
 
   useEffect(() => {
     (async () => {
-      const { status } = await Calendar.requestCalendarPermissionsAsync();
+      const { status } = await requestPermission();
       if (status === 'granted') {
         const calendars = await Calendar.getCalendarsAsync(Calendar.EntityTypes.EVENT);
         console.log('Here are all your calendars:');
